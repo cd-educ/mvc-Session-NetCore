@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.title = "Inicio";
+}
+
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p>Please log in to continue</p>
+
+        @if (ViewBag.msg != null)
+        {
+            <p><b>@ViewBag.msg</b></p>
+        }
+
+        <form asp-action="Login" asp-controller="Home" method="post">
+
+            <input type="text" name="usuario" placeholder="Usuario" />
+            <input type="password" name="password" placeholder="Password" />
+            <input type="submit" value="Iniciar sesión" />
+
+        </form>
+
+        <p>Or register an account if you are new</p>
+
+        <form asp-action="Register" asp-controller="Home" method="post">
+
+            <input type="text" name="usuario" placeholder="Usuario" />
+            <input type="password" name="password" placeholder="Password" />
+            <input type="submit" value="Registrarse" />
+
+        </form>
+
+    </div>
